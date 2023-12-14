@@ -1,0 +1,63 @@
+1. using c#, A student is a person with registration number, program and fee balance. Define a full student class 
+
+ANS:
+
+using System;
+
+public class Student
+{
+    // Properties
+    public int RegistrationNumber { get; set; }
+    public string Program { get; set; }
+    public decimal FeeBalance { get; set; }
+
+    // Constructor
+    public Student(int registrationNumber, string program, decimal feeBalance)
+    {
+        RegistrationNumber = registrationNumber;
+        Program = program;
+        FeeBalance = feeBalance;
+    }
+
+    // Method to display student information
+    public void DisplayStudentInfo()
+    {
+        Console.WriteLine($"Registration Number: {RegistrationNumber}");
+        Console.WriteLine($"Program: {Program}");
+        Console.WriteLine($"Fee Balance: ${FeeBalance}");
+    }
+}
+
+2. Compare and contrast between class and struct as used in C#
+
+ANS:
+
+Similarities:
+Both classes and structs are used to define types in C#.
+They can have fields, properties, methods, and other members.
+They support encapsulation and access modifiers like public, private, etc.
+
+Differences:
+Memory Allocation:
+Class: Objects of a class are reference types, and they are allocated on the heap. When you create an instance of a class, you get a reference to the object.
+Struct: Objects of a struct are value types, and they are allocated on the stack or in-line within the containing object. When you create an instance of a struct, you get the actual data.
+
+Default Constructor:
+Class: A default constructor (parameterless constructor) is provided by the compiler if you don't define one explicitly.
+Struct: No default constructor is provided. You need to define all constructors explicitly.
+
+Inheritance:
+Class: Supports inheritance. You can create a hierarchy of classes using inheritance.
+Struct: Does not support inheritance. It cannot be used as a base for other structs or classes.
+
+Nullable:
+Class: Can be set to null because it's a reference type.
+Struct: Cannot be set to null because it's a value type. However, you can use Nullable<T> (or ? shorthand) to create nullable value types.
+Performance:
+
+Class: Generally has a higher performance overhead because of heap allocation and reference indirection.
+Struct: Generally has lower overhead as it's stored inline or on the stack.
+Use Cases:
+
+Class: Suitable for representing complex objects, instances that need to be shared, and for implementing behavior through methods.
+Struct: Suitable for small, lightweight objects that represent a single value (e.g., int, float, etc.) and when performance or memory concerns are critical.
